@@ -49,7 +49,7 @@
                                 <a href='delete.php?nomer=$id' style='margin-right: 10px'>
                                     <img src='images/delete.png' height='26'/>
                                 </a>
-                                <a >
+                                <a href='edit.php?id=$id'>
                                     <img src='images/edit.png' height='26'/>
                                 </a>
                             </div>

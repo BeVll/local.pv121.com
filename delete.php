@@ -1,6 +1,11 @@
 <?php
-include($_SERVER["DOCUMENT_ROOT"] . "/connection.php")
-    $id = $_GET['nomer'];
+
+
+    $user = "root";
+    $pass="";
+    $dbh = new PDO("mysql:host=localhost;dbname=lesson1",$user, $pass);
+        $id = $_GET['nomer'];
+ 
     $sql = "DELETE from categories WHERE id='$id'";
     
 

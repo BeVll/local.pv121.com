@@ -1,6 +1,7 @@
 <?php 
-
-    include($_SERVER["DOCUMENT_ROOT"] . "/connection.php")
+    $user = "root";
+    $pass="";
+    $dbh = new PDO("mysql:host=localhost;dbname=lesson1",$user, $pass);
     // collect value of input field
     $name = $_REQUEST['name'];
     $image = $_REQUEST['image'];
