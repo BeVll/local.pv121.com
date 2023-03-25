@@ -20,7 +20,7 @@
 <main>
     <div class="container">
         <h1 class="text-center">Додати категорію</h1>
-        <form>
+        <form action="add.php" method="post">
             <div class="mb-3">
                 <label for="name" class="form-label">Назва</label>
                 <input type="text" class="form-control" id="name" name="name">

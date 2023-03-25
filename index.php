@@ -25,6 +25,7 @@
                 <th scope="col">Фото</th>
                 <th scope="col">Навва</th>
                 <th scope="col">Опис</th>
+                <th scope="col">Дії</th>
             </tr>
             </thead>
             <tbody>
@@ -34,6 +35,7 @@
                 $command = $dbh->query($sql);
 
                 foreach ($command as $item) {
+                    $id = $item['id'];
                     $name = $item['name'];
                     $image = $item['image'];
                     $desc = $item['description'];
@@ -42,6 +44,16 @@
                         <td><img src='$image' height='60'></td>
                         <td>$name</td>
                         <td>$desc</td>
+                        <td>
+                            <div style='display: flex; justify-content: center; '>
+                                <a href='delete.php?nomer=$id' style='margin-right: 10px'>
+                                    <img src='images/delete.png' height='26'/>
+                                </a>
+                                <a >
+                                    <img src='images/edit.png' height='26'/>
+                                </a>
+                            </div>
+                        </td>
                     </tr>
                     ";
                 }
