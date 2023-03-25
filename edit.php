@@ -9,15 +9,18 @@
     <title>Document</title>
 </head>
 <body>
-<?php include($_SERVER["DOCUMENT_ROOT"] . "/connection.php") ?>
+<?php include($_SERVER["DOCUMENT_ROOT"] . "/connection.php");
+    $idTMP = $_GET['id'];
+?>
 <div class="container">
         <h1 class="text-center">Додати категорію</h1>
-        <form >
-        
+        <?php
+            echo "<form action='editOP.php?id=$idTMP' method='post'>"
+        ?>
 
             
             <?php
-            $idTMP = $_GET['id'];
+            
                 $sql = "SELECT * FROM categories WHERE id=$idTMP";
                 $command = $dbh->query($sql);
 
@@ -26,6 +29,7 @@
                         $name = $item['name'];
                         $image = $item['image'];
                         $description = $item['description'];
+                 
                         echo "
                             <div class='mb-3'>
                                 <label for='name' class='form-label'>Назва</label>
@@ -42,7 +46,7 @@
                                             name='description'
                                             placeholder='Leave a comment here'
                                             id='description'
-                                            style='height: 100px' value='$description'></textarea>
+                                            style='height: 100px' >$description</textarea>
                                     <label for='description'>Опис</label>
                                 </div>
                             </div>
